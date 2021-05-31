@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.target=MoebelTest
+comment0.text=\n\ Die\ Test-Klasse\ MoebelTest.\n\n\ @author\ \ (Ihr\ Name)\n\ @version\ (eine\ Versionsnummer\ oder\ ein\ Datum)\n
+comment1.params=dauer
+comment1.target=void\ warte(int)
+comment2.params=
+comment2.target=MoebelTest()
+comment2.text=\n\ Konstruktor\ fuer\ die\ Test-Klasse\ MoebelTest\n
+comment3.params=
+comment3.target=void\ setUp()
+comment3.text=\n\ \ Setzt\ das\ Testger\u00FCst\ fuer\ den\ Test.\n\n\ Wird\ vor\ jeder\ Testfall-Methode\ aufgerufen.\n
+comment4.params=
+comment4.target=void\ tearDown()
+comment4.text=\n\ Gibt\ das\ Testger\u00FCst\ wieder\ frei.\n\n\ Wird\ nach\ jeder\ Testfall-Methode\ aufgerufen.\n
+comment5.params=
+comment5.target=void\ testSchrankwand()
+numComments=6

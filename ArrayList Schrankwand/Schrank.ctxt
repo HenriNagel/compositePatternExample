@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=Schrank
+comment0.text=\n\ Ein\ Schrank,\ der\ im\ Grafikfenster\ angezeigt\ und\n\ dessen\ Eigenschaften\ veraendert\ werden\ koennen.\n\ \n\ @author\ Nicolas\ Paul\n\ @version\ (Apr\ 2020)\n
+comment1.params=xPosition\ yPosition\ breite\ tiefe\ orientierung\ farbe
+comment1.target=Schrank(int,\ int,\ int,\ int,\ int,\ java.lang.String)
+comment1.text=\n\ Erzeuge\ einen\ neuen\ Schrank.\ Dieser\ Kostruktor\ erwartet\ die\ Angabe\ aller\ f\u00FCr\n\ den\ Schrank\ wichtigen\ Parameter.\n
+comment2.params=
+comment2.target=void\ setzeGrundform()
+comment2.text=\n\ definiert\ die\ verwendete\ Grundform\n
+numComments=3
