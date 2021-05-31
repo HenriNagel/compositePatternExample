@@ -1,0 +1,2 @@
+# Kompositum Entwurfsmuster bsp Schrankwand
+
