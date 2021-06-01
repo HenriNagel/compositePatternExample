@@ -4,36 +4,32 @@ import java.util.ArrayList;
 /**
  * Eine Schrankwand, die manipuliert werden kann und sich selbst auf einer Leinwand zeichnet.
  * @author Nicolas Paul
- * @version (Apr 2020)
+ * @author Henri Nagel
+ * @version (Apr 2021)
  */
 public class Schrankwand extends Moebel {
   private ArrayList<Schrank> schraenke;
   private int anzahl;
 
    /**
-   * Erzeuge eine neue Schrankwand mit einer Standardfarbe und Standardgroesse
-   * an einer Standardposition.
+   * Erzeuge eine neue Schrankwand
+   * Hierbei werden auch parameter für die Schreanke als Teil der Schrankwand übergeben (mit der Vorsilbe prot = prototyp)
    */
-  public Schrankwand(int anzahl) {
-    xPosition = 40;
-    yPosition = 80;
-    farbe = "blau";
-    orientierung = 0;
-    istSichtbar = false;
+  public Schrankwand(int xPosition, int yPosition, int orientierung, String farbe, int protBreite, int protTiefe, int protOrientierung, int anzahl) {
+    this.xPosition = xPosition;
+    this.yPosition = yPosition;
+    this.farbe = farbe; 
+    this.orientierung = orientierung;
     this.anzahl = anzahl;
-    /**
-     * Um die gesamte breite der Schrankwand zu berechnen, brauchen wir die breite
-     * eines Schrankes.
-     */
-    int schrankbreite = 60; 
-    tiefe  = 37;
+    istSichtbar = false;
+
     /**
      * Wir erzeugen eine typisierte Sammlungsklasse, die Schrank-Objekte aufnehmen kann.
      * Die einzelnen Schränke werden in der for-Schleife erzeugt und der ArrayList hinzugefügt.
      */
     schraenke = new ArrayList<Schrank>();    
     for (int i=0; i<anzahl; i++){
-        schraenke.add(new Schrank(0, 0, schrankbreite, tiefe, orientierung, farbe));
+        schraenke.add(new Schrank(0, 0, protBreite, protTiefe, protOrientierung, farbe));
     }
     setzeGrundform();
   }
@@ -43,45 +39,16 @@ public class Schrankwand extends Moebel {
    * Definiert die verwendete Grundform
    */
   protected void setzeGrundform() {
-      /**
-       * Ein ZusammengesetzteFigur Objekt mit dem Namen figur wird definiert.
-       * Es verwaltet die figuren der Schrankobjekte.
-       */
       ZusammengesetzteFigur figur = new ZusammengesetzteFigur();
       
-      /**
-       * Mit einer vereinfachten for-Schleife kann man über alle Elemente einer Sammlungsklasse
-       * "iterieren". Das bedeutet, dass sie nacheinander durchlaufen werden.
-       * 
-       * for (<ELEMENT-TYP> <LAUFVARIABLE> : <LISTE>) {
-       *    ...
-       * }
-       * 
-       * Wir wollen hier alle Umrisse unserer Schränke die in der ArrayList gespeichert sind,
-       * der ZusammengesetzenFigur hinzugeügen.
-       * 
-       * Wir interieren also über die ArrayList schraenke. In jedem Iterationsschritt wird in
-       * der Laufvariable schrank vom Datentyp Schrank das aktuelle Schrankobjekt gespeichert.
-       * von diesem Schrankobjekt wird jetzt mit gibtFigur die figur geholt.
-       * 
-       * Außerdem müssen die Schrankobjekte noch an die richtige Stelle ge stezt werden.
-       * Wir berechnen die xPosition folgendermaßen: Jedes Schrankobjekt hat einen Index, den man
-       * über die Methode indexOf(i) erhält.
-       * Wir multiplizieren den Index mit der breite des Schranks (gibBreite muss in Moebel
-       * ergänzt werden) un erhalten die xPosition. Bsp.:
-       * 
-       * 1. Schrank: Index = 0 => 0*60 = 0 => xPosition = 0
-       * 2. Schrank: Index = 1 => 1*60 = 60  => xPosition = 60
-       * ...
-       * 
-       */
-      int breite = 0;
-      int tiefe = 0;
+      int breite = 0, tiefe = 0;
+      
       for (Schrank schrank: schraenke) {
         figur.fuegeHinzu(breite + schrank.gibX(), schrank.gibY(), schrank.gibFigur(), schrank.gibOrientierung());
         breite += schrank.gibBreite() + schrank.gibX();
         tiefe = (tiefe < schrank.gibTiefe() + schrank.gibY()) ? schrank.gibTiefe() + schrank.gibY() : tiefe;
       }
+      
       this.breite = breite;   
       this.tiefe = tiefe;
       this.figur = figur;
@@ -109,29 +76,14 @@ public class Schrankwand extends Moebel {
     zeige();
   }
 
-  protected void entferneSchrank(int i){
+  protected void entferneSchrank(int i, boolean adjust){
     verberge();
-    if(schraenke.get(i+1) != null){
+    if(schraenke.get(i+1) != null && !adjust){
       schraenke.get(i+1).xPosition += schraenke.get(i).gibBreite();
     }
     schraenke.remove(i);
     setzeGrundform();
     zeige();
-  }
-
-  protected void test(int xPos, int yPos){
-    verberge();
-    int breite = 50;
-    int tiefe = 50;
-    int orientierung = 0;
-    String farbe = "blau";
-    
-  }
-
-
-  protected void test2(){
-    ZusammengesetzteFigur figur = new ZusammengesetzteFigur();
-    System.out.println(this.figur);
   }
 }
 
