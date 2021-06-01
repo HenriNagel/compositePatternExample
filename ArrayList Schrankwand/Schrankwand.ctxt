@@ -3,7 +3,7 @@ comment0.target=Schrankwand
 comment0.text=\n\ Eine\ Schrankwand,\ die\ manipuliert\ werden\ kann\ und\ sich\ selbst\ auf\ einer\ Leinwand\ zeichnet.\n\ @author\ Nicolas\ Paul\n\ @author\ Henri\ Nagel\n\ @version\ (Apr\ 2021)\n
 comment1.params=xPosition\ yPosition\ orientierung\ farbe\ protBreite\ protTiefe\ protOrientierung\ anzahl
 comment1.target=Schrankwand(int,\ int,\ int,\ java.lang.String,\ int,\ int,\ int,\ int)
-comment1.text=\n\ Erzeuge\ eine\ neue\ Schrankwand\ mit\ einer\ Standardfarbe\ und\ Standardgroesse\n\ an\ einer\ Standardposition.\n
+comment1.text=\n\ Erzeuge\ eine\ neue\ Schrankwand\n\ Hierbei\ werden\ auch\ parameter\ f\u00FCr\ die\ Schreanke\ als\ Teil\ der\ Schrankwand\ \u00FCbergeben\ (mit\ der\ Vorsilbe\ prot\ \=\ prototyp)\n
 comment2.params=
 comment2.target=void\ setzeGrundform()
 comment2.text=\n\ Definiert\ die\ verwendete\ Grundform\n
