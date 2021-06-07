@@ -40,15 +40,6 @@ public class Zeichnung
         zeichenflaeche = new Zeichenflaeche();
         zeichenflaeche.setPreferredSize(new Dimension(frameWidth, frameHeight));
         gui.setVisible(true);
-        
-        JMenuBar menubar = new JMenuBar();
-        JMenu hinzufügen = new JMenu("hizufügen");
-        JMenuItem schrank = new JMenuItem("schrank");
-        hinzufügen.add(schrank);
-        menubar.add(hinzufügen);
-        gui.setJMenuBar(menubar);
-        gui.validate();
-        gui.repaint();
     }
 
     /**

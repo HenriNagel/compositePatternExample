@@ -15,7 +15,7 @@ public class Schrankwand extends Moebel {
    * Erzeuge eine neue Schrankwand
    * Hierbei werden auch parameter für die Schreanke als Teil der Schrankwand übergeben (mit der Vorsilbe prot = prototyp)
    */
-  public Schrankwand(int xPosition, int yPosition, int orientierung, String farbe, int protBreite, int protTiefe, int protOrientierung, int anzahl) {
+  public Schrankwand(int xPosition, int yPosition, int orientierung, String farbe, Schrank schrank, int anzahl) {
     this.xPosition = xPosition;
     this.yPosition = yPosition;
     this.farbe = farbe; 
@@ -29,7 +29,7 @@ public class Schrankwand extends Moebel {
      */
     schraenke = new ArrayList<Schrank>();    
     for (int i=0; i<anzahl; i++){
-        schraenke.add(new Schrank(0, 0, protBreite, protTiefe, protOrientierung, farbe));
+        schraenke.add(schrank);
     }
     setzeGrundform();
   }
@@ -69,9 +69,9 @@ public class Schrankwand extends Moebel {
     zeige();
   }
 
-  protected void hinzufügenSchrank(int xPos, int yPos, int breite, int tiefe, int orientierung, String farbe){
+  protected void hinzufügenSchrank(Schrank schrank){
     verberge();
-    schraenke.add(new Schrank(xPos,yPos,breite,tiefe,orientierung,farbe));
+    schraenke.add(schrank);
     setzeGrundform();
     zeige();
   }
@@ -84,6 +84,10 @@ public class Schrankwand extends Moebel {
     schraenke.remove(i);
     setzeGrundform();
     zeige();
+  }
+
+  protected void gibSchrank(int index){
+    return schraenke.get(index);
   }
 }
 

@@ -44,10 +44,7 @@ public class MoebelTest
     @Test
     public void testSchrankwand()
     {
-        Schrankwand sw1 = new Schrankwand(4);
-        sw1.zeige();
-        warte(300);
-        sw1.hinzufügenSchrank(0,0,60,60,0,"blau");    
+           
     }
 }
 
