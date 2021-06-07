@@ -86,7 +86,7 @@ public class Schrankwand extends Moebel {
     zeige();
   }
 
-  protected void gibSchrank(int index){
+  protected Schrank gibSchrank(int index){
     return schraenke.get(index);
   }
 }

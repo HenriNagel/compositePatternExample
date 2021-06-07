@@ -1,16 +1,18 @@
 #BlueJ class context
 comment0.target=Schrankwand
 comment0.text=\n\ Eine\ Schrankwand,\ die\ manipuliert\ werden\ kann\ und\ sich\ selbst\ auf\ einer\ Leinwand\ zeichnet.\n\ @author\ Nicolas\ Paul\n\ @author\ Henri\ Nagel\n\ @version\ (Apr\ 2021)\n
-comment1.params=xPosition\ yPosition\ orientierung\ farbe\ protBreite\ protTiefe\ protOrientierung\ anzahl
-comment1.target=Schrankwand(int,\ int,\ int,\ java.lang.String,\ int,\ int,\ int,\ int)
+comment1.params=xPosition\ yPosition\ orientierung\ farbe\ schrank\ anzahl
+comment1.target=Schrankwand(int,\ int,\ int,\ java.lang.String,\ Schrank,\ int)
 comment1.text=\n\ Erzeuge\ eine\ neue\ Schrankwand\n\ Hierbei\ werden\ auch\ parameter\ f\u00FCr\ die\ Schreanke\ als\ Teil\ der\ Schrankwand\ \u00FCbergeben\ (mit\ der\ Vorsilbe\ prot\ \=\ prototyp)\n
 comment2.params=
 comment2.target=void\ setzeGrundform()
 comment2.text=\n\ Definiert\ die\ verwendete\ Grundform\n
 comment3.params=n
 comment3.target=void\ aendereAnzahl(int)
-comment4.params=xPos\ yPos\ breite\ tiefe\ orientierung\ farbe
-comment4.target=void\ hinzuf\u00FCgenSchrank(int,\ int,\ int,\ int,\ int,\ java.lang.String)
+comment4.params=schrank
+comment4.target=void\ hinzuf\u00FCgenSchrank(Schrank)
 comment5.params=i\ adjust
 comment5.target=void\ entferneSchrank(int,\ boolean)
-numComments=6
+comment6.params=index
+comment6.target=Schrank\ gibSchrank(int)
+numComments=7
